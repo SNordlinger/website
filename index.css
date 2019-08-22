@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
+
+/* @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap'); */
+
+body {
+  font-family: "Cutive Mono", monospace;
+  /* font-family: 'Inconsolata', monospace; */
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 7rem;
+}
+
+div.link {
+  font-size: 1.5em;
+}
+
+a.social-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  margin: 1.5rem 0 0 1.5rem;
+  display: block;
+}
+
+a.social-link > img {
+  max-height: 0.75em;
+  margin-right: 0.3em;
+}
+
+a.social-link > .arrow {
+  font-size: 1.75rem;
+}
+
+.subheading {
+  font-size: 2rem;
+  margin: 0 0 7rem 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .subheading {
+    font-size: 1rem;
+  }
+}
+
+div.name {
+  max-width: 60rem;
+}
