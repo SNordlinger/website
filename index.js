@@ -75,10 +75,12 @@ function cycle() {
 
   startAnimation(target, hellos[newHello]);
   helloIndex = newHello;
+
+  setTimeout(cycle, 10000);
 }
 
 function main() {
-  setInterval(cycle, 10000);
+  setTimeout(cycle, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", main);
