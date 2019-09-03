@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
 
-/* @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap'); */
-
 body {
   font-family: "Cutive Mono", monospace;
   /* font-family: 'Inconsolata', monospace; */
@@ -17,12 +15,19 @@ div.link {
   font-size: 1.5em;
 }
 
+.section-title {
+  margin-left: 1.5rem;
+  font-size: 1.7em;
+  color: #999
+}
+
 a.social-link {
   text-decoration: none;
   color: black;
   font-size: 1.5em;
   margin: 1.5rem 0 0 1.5rem;
   display: block;
+  color: #07a;
 }
 
 a.social-link > img {
@@ -32,6 +37,7 @@ a.social-link > img {
 
 a.social-link > .arrow {
   font-size: 1.75rem;
+  color: black;
 }
 
 .subheading {
@@ -43,10 +49,24 @@ a.social-link > .arrow {
 
 @media (max-width: 600px) {
   .subheading {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
+/* This hacky css is to make the svg title scale
+properly in IE 11 */
 div.name {
+  position: relative;
+  height: 0;
+  padding: 0;
+  padding-bottom: 13%;
   max-width: 60rem;
+}
+
+div.name > svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
 }

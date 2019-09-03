@@ -1,86 +1,70 @@
-let helloIndex = 0;
+import prism from "prismjs";
+import hellos from "./hellos";
+import ElementAnimation from "./ElementAnimation";
 
-function getRandomLetter() {
-  charCode = Math.floor(Math.random() * (126 - 33)) + 33;
-  return String.fromCharCode(charCode);
+function runAnimations(animations) {
+  animations.forEach(a => a.displayNextFrame());
+
+  if (animations.some(a => !a.isDone())) {
+    setTimeout(() => runAnimations(animations));
+  }
 }
 
-function runAnimation(element, frame, data) {
-  const newChars = data.map(({ endChar, iterations }) =>
-    iterations > 0 ? getRandomLetter() : endChar
+function startAnimation(element, oldText, newText, codeHtml) {
+  const padding =
+    oldText.length > newText.length ? oldText.length - newText.length : 0;
+
+  const codeHtmlElements = codeHtml.childNodes;
+  const animations = Array.prototype.map.call(
+    codeHtmlElements,
+    (span, index) => {
+      if (index == codeHtmlElements.length - 1) {
+        return new ElementAnimation(span, padding);
+      }
+
+      return new ElementAnimation(span, 0);
+    }
   );
 
-  element.textContent = newChars.join("");
+  const container = document.createElement("div");
+  container.id = "hello-code";
+  animations.forEach(a => {
+    container.appendChild(a.getTag());
+  });
+  element.parentElement.replaceChild(container, element);
 
-  if (frame > 1) {
-    const newData = data.map(({ endChar, iterations }) => ({
-      endChar,
-      iterations: iterations - 1
-    }));
-
-    setTimeout(() => runAnimation(element, frame - 1, newData));
-  }
+  runAnimations(animations);
 }
 
-function startAnimation(element, endString) {
-  const startString = element.textContent;
-  const randomizeLength =
-    startString.length > endString.length
-      ? startString.length
-      : endString.length;
-
-  let data = [];
-  let maxIterations = 0;
-
-  for (i = 0; i < randomizeLength; i++) {
-    let endChar = "";
-    if (i < endString.length) {
-      endChar = endString.charAt(i);
-    }
-
-    const iterations = Math.floor(Math.random() * (200 - 10)) + 10;
-    if (iterations > maxIterations) {
-      maxIterations = iterations;
-    }
-
-    data.push({
-      endChar,
-      iterations
-    });
-  }
-
-  runAnimation(element, maxIterations + 1, data);
-}
-
-function cycle() {
-  const hellos = [
-    "print('Hello!')",
-    "console.log('Hello!');",
-    'System.out.println("Hello!");',
-    'println!("Hello!");',
-    'puts("Hello!");',
-    '(println "Hello!")',
-    'fmt.println("Hello!")',
-    "SELECT 'Hello!';",
-    'echo "Hello!"',
-    'Write-Host "Hello!"'
-  ];
-
+function cycle(coloredHellos, currentIndex) {
   const target = document.getElementById("hello-code");
 
-  let newHello = helloIndex;
-  while (newHello === helloIndex) {
-    newHello = Math.floor(Math.random() * hellos.length);
+  let newIndex = currentIndex;
+  while (newIndex === currentIndex) {
+    newIndex = Math.floor(Math.random() * hellos.length);
   }
 
-  startAnimation(target, hellos[newHello]);
-  helloIndex = newHello;
+  const oldText = hellos[currentIndex].hello;
+  const newText = hellos[newIndex].hello;
+  const newHtml = coloredHellos[newIndex].cloneNode(true);
 
-  setTimeout(cycle, 10000);
+  startAnimation(target, oldText, newText, newHtml);
+
+  setTimeout(() => cycle(coloredHellos, newIndex), 10000);
 }
 
 function main() {
-  setTimeout(cycle, 1000);
+  const coloredHellos = hellos.map(hello => {
+    const newGrammar = hello.grammar;
+    const newLang = hello.lang;
+    const newText = hello.hello;
+
+    const helloHTMLText = prism.highlight(newText, newGrammar, newLang);
+
+    return document.createRange().createContextualFragment(helloHTMLText);
+  });
+
+  setTimeout(() => cycle(coloredHellos, 0), 1000);
 }
 
 document.addEventListener("DOMContentLoaded", main);

@@ -9,10 +9,13 @@
   },
   "author": "Sam Nordlinger",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "prismjs": "^1.17.1"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
     "babel-core": "^6.26.3",
+    "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.12.3"
@@ -21,6 +24,30 @@
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "javascript",
+            "c",
+            "rust",
+            "go",
+            "java",
+            "clojure",
+            "sql",
+            "bash",
+            "python",
+            "powershell"
+          ],
+          "plugins": [
+            "line-numbers"
+          ],
+          "theme": "default",
+          "css": true
+        }
+      ]
     ]
   }
 }
