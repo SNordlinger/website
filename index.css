@@ -1,14 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Cutive Mono", monospace;
   /* font-family: 'Inconsolata', monospace; */
+  padding-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  margin: 0;
-  padding: 0;
   font-size: 7rem;
+}
+
+section {
+  padding: 0 1.5rem;
 }
 
 div.link {
@@ -16,16 +28,16 @@ div.link {
 }
 
 .section-title {
-  margin-left: 1.5rem;
+  margin-top: 4rem;
   font-size: 1.7em;
-  color: #999
+  color: black;
 }
 
 a.social-link {
   text-decoration: none;
   color: black;
   font-size: 1.5em;
-  margin: 1.5rem 0 0 1.5rem;
+  margin-top: 1.5rem;
   display: block;
   color: #07a;
 }
@@ -42,7 +54,7 @@ a.social-link > .arrow {
 
 .subheading {
   font-size: 2rem;
-  margin: 0 0 7rem 1.5rem;
+  margin-left: 1.5rem;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -69,4 +81,48 @@ div.name > svg {
   width: 100%;
   left: 0;
   top: 0;
+}
+
+.cm-field {
+  margin-top: 1.5rem;
+}
+
+.cm-input {
+  font-family: "Cutive Mono", monospace;
+  padding: 0.5rem;
+  width: 40rem;
+  border: solid 3px #999;
+  font-size: 1.6rem;
+  display: block;
+}
+
+@media(max-width: 44rem) {
+  .cm-input {
+    width: 100%;
+  }
+}
+
+.cm-label {
+  color: slategrey;
+  font-size: 1.2rem;
+}
+
+.cm-submit {
+  font-family: "Cutive Mono", monospace;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: inherit;
+  border: solid 3px #690;
+  color: #690;
+  font-weight: 600;
+  box-shadow: 2px 2px lightgrey;
+}
+
+.cm-submit:hover {
+  color: white;
+  background-color: #690;
+}
+
+.cm-submit:active {
+  box-shadow: none;
 }
