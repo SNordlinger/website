@@ -94,6 +94,7 @@ div.name > svg {
   border: solid 3px #999;
   font-size: 1.6rem;
   display: block;
+  border-radius: 0;
 }
 
 @media(max-width: 44rem) {
