@@ -33,21 +33,23 @@ div.link {
   color: black;
 }
 
-a.social-link {
+.social-link {
+  margin-top: 1.5rem;
+}
+
+.social-link a {
   text-decoration: none;
   color: black;
   font-size: 1.5em;
-  margin-top: 1.5rem;
-  display: block;
   color: #07a;
 }
 
-a.social-link > img {
+.social-link  img {
   max-height: 0.75em;
   margin-right: 0.3em;
 }
 
-a.social-link > .arrow {
+.social-link .arrow {
   font-size: 1.75rem;
   color: black;
 }
