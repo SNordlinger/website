@@ -1,0 +1,2 @@
+publish = "frontend/dist"
+command = "npm run build"
