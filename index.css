@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
-
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Cutive Mono", monospace;
-  /* font-family: 'Inconsolata', monospace; */
+  /* font-family: "Cutive Mono", monospace; */
+  font-family: "Inconsolata", monospace;
   padding: 0 0 3rem 0;
   margin: 0;
+  background-color: #585d5e;
 }
 
 h1,
@@ -25,63 +25,52 @@ h1 {
   font-size: 7rem;
 }
 
-section {
-  padding: 0 1.5rem;
+div.name {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div.link {
-  font-size: 1.5em;
+.site-banner {
+  background-color: #815b97;
+  color: white;
+  padding: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
-.section-title {
-  margin-top: 4rem;
-  font-size: 1.7em;
-  color: black;
+.splash {
+  height: calc(100vh - 5.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-link {
-  margin-top: 1.5rem;
+.welcome {
+  color: white;
+  text-align: center;
 }
 
-.social-link a {
-  text-decoration: none;
-  color: black;
-  font-size: 1.5em;
-  color: #07a;
-}
-
-.social-link img {
-  max-height: 0.75em;
-  margin-right: 0.3em;
-}
-
-.social-link .arrow {
-  font-size: 1.75rem;
-  color: black;
-}
-
-.subheading {
+.welcome p {
   font-size: 2rem;
+}
+
+#hello-code {
+  font-size: 4rem;
   margin: 1rem 0 0 1.5rem;
   overflow: hidden;
   white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-  .subheading {
+  #hello-code {
     margin-top: 0.5rem;
     font-size: 1.1rem;
   }
 }
 
-div.name {
-  max-width: 60rem;
-  padding: 1.5rem 1.5rem 0 1.5rem;
-}
-
-div.name svg {
-  width: 100%;
-  max-height: 5rem;
+section {
+  padding: 3rem;
+  background-color: #3994a8;
+  box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.5), 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 .cm-field {
@@ -127,4 +116,10 @@ div.name svg {
 
 .cm-submit:active {
   box-shadow: none;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #6196cc !important;
 }
