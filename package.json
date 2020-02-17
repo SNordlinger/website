@@ -11,7 +11,9 @@
   "author": "Sam Nordlinger",
   "license": "MIT",
   "dependencies": {
-    "prismjs": "^1.17.1"
+    "core-js": "^3.2.1",
+    "prismjs": "^1.17.1",
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
@@ -23,8 +25,7 @@
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "env"
     ],
     "plugins": [
       [
@@ -45,7 +46,7 @@
           "plugins": [
             "line-numbers"
           ],
-          "theme": "default",
+          "theme": "tomorrow",
           "css": true
         }
       ]

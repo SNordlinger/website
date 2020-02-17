@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import prism from "prismjs";
 import hellos from "./hellos";
 import ElementAnimation from "./ElementAnimation";
