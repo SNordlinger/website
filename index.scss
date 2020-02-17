@@ -46,10 +46,10 @@ div.name {
 .welcome {
   color: white;
   text-align: center;
-}
 
-.welcome p {
-  font-size: 2rem;
+  p {
+    font-size: 2rem;
+  }
 }
 
 #hello-code {
@@ -57,12 +57,12 @@ div.name {
   margin: 1rem 0 0 1.5rem;
   overflow: hidden;
   white-space: nowrap;
-}
 
-@media (max-width: 600px) {
-  #hello-code {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
+  @media (max-width: 600px) {
+    #hello-code {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
   }
 }
 
@@ -84,10 +84,8 @@ section {
   font-size: 1.6rem;
   display: block;
   border-radius: 0;
-}
 
-@media (max-width: 44rem) {
-  .cm-input {
+  @media (max-width: 44rem) {
     width: 100%;
   }
 }
@@ -106,15 +104,15 @@ section {
   color: #690;
   font-weight: 600;
   box-shadow: 2px 2px lightgrey;
-}
 
-.cm-submit:hover {
-  color: white;
-  background-color: #690;
-}
+  &:hover {
+    color: white;
+    background-color: #690;
+  }
 
-.cm-submit:active {
-  box-shadow: none;
+  &:active {
+    box-shadow: none;
+  }
 }
 
 .token.boolean,
