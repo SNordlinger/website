@@ -7,8 +7,7 @@ html {
 }
 
 body {
-  /* font-family: "Cutive Mono", monospace; */
-  font-family: "Inconsolata", monospace;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
   background-color: #585d5e;
@@ -25,54 +24,7 @@ h6 {
   padding: 0;
 }
 
-h1 {
-  font-size: 7rem;
-}
-
-.arrow {
-  font-size: 1.5rem;
-  animation-name: arrow-rotate;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-delay: 10s;
-}
-
-.arrow-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation-name: arrow-move;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-delay: 10s;
-}
-
-@keyframes arrow-move {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: calc(100% - 6rem);
-  }
-}
-
-@keyframes arrow-rotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(180deg);
-  }
-}
-
-.heading {
+.name-heading {
   font-size: 1.25rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0 0.5rem;
@@ -114,7 +66,7 @@ h1 {
   padding: 0.25rem;
 }
 
-.section-content {
+.splash-screen {
   min-height: calc(100vh - 4.5rem);
   display: flex;
   align-items: center;
@@ -136,63 +88,17 @@ h1 {
   white-space: nowrap;
 
   @media (max-width: 600px) {
-    #hello-code {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
   }
 }
 
-.contact-form {
-  margin-left: 3rem;
-}
-
-.section-heading {
+.end-footer {
   padding: 0.25rem;
   height: 2.25rem;
   position: relative;
   background-color: #3994a8;
   box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.5), 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
-}
-
-.cm-field {
-  margin-top: 1.5rem;
-}
-
-.cm-input {
-  font-family: "Cutive Mono", monospace;
-  padding: 0.5rem;
-  width: 40rem;
-  background-color: #585d5e;
-  border: solid 3px #999;
-  color: white;
-  font-size: 1.6rem;
-  display: block;
-  border-radius: 0;
-
-  @media (max-width: 44rem) {
-    width: 100%;
-  }
-}
-
-.cm-label {
-  color: lightblue;
-  font-size: 1.2rem;
-}
-
-.cm-submit {
-  font-family: "Cutive Mono", monospace;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  background-color: #690;
-  border: solid 3px #690;
-  color: white;
-  font-weight: 600;
-  box-shadow: 2px 2px grey;
-
-  &:active {
-    box-shadow: none;
-  }
 }
 
 .token.boolean,
