@@ -1,3 +1,8 @@
+$small-screen: 640px;
+$med-screen: 768px;
+$large-screen: 1024px;
+$xl-screen: 1280px;
+
 * {
   box-sizing: border-box;
 }
@@ -75,9 +80,14 @@ h6 {
 
 .welcome {
   text-align: center;
+  font-family: "Inconsolata", monospace;
 
   p {
     font-size: 2rem;
+
+    @media (max-width: $small-screen) {
+      font-size: 0.7rem;
+    }
   }
 }
 
@@ -87,9 +97,9 @@ h6 {
   overflow: hidden;
   white-space: nowrap;
 
-  @media (max-width: 600px) {
+  @media (max-width: $small-screen) {
     margin-top: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
