@@ -2,82 +2,38 @@
   <head>
     <title>Sam Nordlinger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.scss" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
     <script src="./src/index.js" defer></script>
   </head>
   <body>
-    <header class="name-header">
-      <div class="name">
-        <svg viewBox="0 0 167 14">
-          <text x="-2" y="13" font-size="15pt">SAM NORDLINGER</text>
-        </svg>
+    <header class="site-banner">
+      <h1 class="name-heading">
+        SAM NORDLINGER
+      </h1>
+      <div class="social-links">
+        <a href="https://twitter.com/gtsam"><img src="assets/twitter.svg"/></a
+        ><a href="https://www.linkedin.com/in/samnordlinger"
+          ><img src="assets/linkedin.svg"
+        /></a>
       </div>
     </header>
-    <!-- welcome snippet -->
-    <div class="subheading">
-      <div id="hello-code">
-        <span class="token keyword">print</span
-        ><span class="token punctuation">(</span
-        ><span class="token string">'Hello!'</span
-        ><span class="token punctuation">)</span>
+    <div class="splash-screen">
+      <div class="welcome">
+        <div id="hello-code">
+          <span class="token keyword">print</span
+          ><span class="token punctuation">(</span
+          ><span class="token string">'Hello!'</span
+          ><span class="token punctuation">)</span>
+        </div>
+        <p>Sam is a developer based in Kalispell, MT</p>
       </div>
     </div>
-    <section>
-      <h2 class="section-title">LINKS</h2>
-      <!-- linkedin link -->
-      <div class="social-link">
-        <a href="http://www.linkedin.com/in/samnordlinger">
-          <span class="arrow">-></span>
-          <img src="./assets/linkedin.png" />LinkedIn
-        </a>
-      </div>
-      <!-- twitter link -->
-      <div class="social-link">
-        <a href="http://www.twitter.com/gtsam">
-          <span class="arrow">-></span>
-          <img src="./assets/twitter.png" />Twitter
-        </a>
-      </div>
-    </section>
-    <section>
-      <h2 class="section-title">CONTACT ME</h2>
-      <form name="contact-me" method="POST" data-netlify="true">
-        <div class="cm-field">
-          <label class="cm-label" for="cm-name-input">// Your Name</label>
-          <input
-            type="text"
-            id="cm-name-input"
-            class="cm-input"
-            name="name"
-            required
-          />
-        </div>
-        <div class="cm-field">
-          <label class="cm-label" for="cm-email-input">// Your Email</label>
-          <input
-            type="email"
-            id="cm-email-input"
-            class="cm-input"
-            name="email"
-            required
-          />
-        </div>
-        <div class="cm-field">
-          <label class="cm-label" for="cm-message-input">// Message</label>
-          <textarea
-            id="cm-message-input"
-            class="cm-input"
-            name="message"
-            rows="6"
-            required
-          ></textarea>
-        </div>
-        <div class="cm-field">
-          <button type="submit" class="cm-submit">Send Me a Message!</button>
-        </div>
-      </form>
-    </section>
+    <footer class="end-footer"></footer>
   </body>
 </html>
