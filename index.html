@@ -13,12 +13,15 @@
   </head>
   <body>
     <header class="site-banner">
-      <div class="name">
+      <div class="heading">
         SAM NORDLINGER
+      </div>
+      <div class="social-links">
+        <img src="assets/twitter.png" /><img src="assets/linkedin.png" />
       </div>
     </header>
     <!-- welcome snippet -->
-    <div class="splash">
+    <div class="section-content">
       <div class="welcome">
         <div id="hello-code">
           <span class="token keyword">print</span
@@ -28,14 +31,19 @@
         </div>
         <p>Sam is a developer based in Kalispell, MT</p>
       </div>
+      <div><a href="#next"><img src="./assets/arrow.svg" /></a></div>
     </div>
-    <section>
-      <h2 class="section-title">FAQ</h2>
-      <div id="weather-root"></div>
-    </section>
-    <section>
-      <h2 class="section-title">CONTACT ME</h2>
-      <form name="contact-me" method="POST" data-netlify="true">
+    <header class="section-heading" id="next">
+      <h2 class="heading hidden">CONTACT ME</h2>
+      </div>
+    </header>
+    <section class="section-content">
+      <form
+        name="contact-me"
+        class="contact-form"
+        method="POST"
+        data-netlify="true"
+      >
         <div class="cm-field">
           <label class="cm-label" for="cm-name-input">// Your Name</label>
           <input
@@ -71,5 +79,6 @@
         </div>
       </form>
     </section>
+    <footer class="section-heading"></footer>
   </body>
 </html>
