@@ -72,7 +72,7 @@ function mobileResize() {
 
   if (Math.abs(screenPixelHeight - expectedPixelHeight) > 10) {
     const newHeightPropery = `${window.innerHeight}px`;
-    document.documentElement.style.addProperty(
+    document.documentElement.style.setProperty(
       "--screen-height",
       newHeightPropery
     );
