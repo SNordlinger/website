@@ -56,7 +56,16 @@ function cycle(coloredHellos, currentIndex) {
   setTimeout(() => cycle(coloredHellos, newIndex), 10000);
 }
 
+function adjustSplashScreenHeight() {
+  const screenHeight = window.innerHeight.toString() + "px";
+  document.documentElement.style.setProperty(
+    "--initial-window-height",
+    screenHeight
+  );
+}
+
 function main() {
+  adjustSplashScreenHeight();
   const weatherContainer = document.getElementById("weather-root");
   const answer = new WeatherAnswer(weatherContainer);
   answer.load();

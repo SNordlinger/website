@@ -3,6 +3,10 @@ $med-screen: 768px;
 $large-screen: 1024px;
 $xl-screen: 1280px;
 
+:root {
+  --initial-window-height: 100vh;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -73,6 +77,7 @@ h6 {
 
 .splash-screen {
   min-height: calc(100vh - 4.5rem);
+  min-height: calc(var(--initial-window-height) - 4.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
