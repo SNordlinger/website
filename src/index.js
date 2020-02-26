@@ -56,11 +56,30 @@ function cycle(coloredHellos, currentIndex) {
   setTimeout(() => cycle(coloredHellos, newIndex), 10000);
 }
 
-function main() {
-  const weatherContainer = document.getElementById("weather-root");
-  const answer = new WeatherAnswer(weatherContainer);
-  answer.load();
+function mobileResize() {
+  const fontSize = getComputedStyle(
+    document.documentElement,
+    null
+  ).getPropertyValue("font-size");
+  const fontPixelHeight = parseFloat(fontSize, 10);
+  const expectedPixelHeight = window.innerHeight - fontPixelHeight * 4.5;
 
+  const splashScreen = document.querySelector(".splash-screen");
+  const screenHeight = getComputedStyle(splashScreen, null).getPropertyValue(
+    "height"
+  );
+  const screenPixelHeight = parseFloat(screenHeight, 10);
+
+  if (abs(screenPixelHeight - expectedPixelHeight) > 10) {
+    const newHeightPropery = `${window.innerHeight}px`;
+    document.documentElement.style.addProperty(
+      "--screen-height",
+      newHeightPropery
+    );
+  }
+}
+
+function main() {
   const coloredHellos = hellos.map(hello => {
     const newGrammar = hello.grammar;
     const newLang = hello.lang;
