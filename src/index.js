@@ -70,7 +70,7 @@ function mobileResize() {
   );
   const screenPixelHeight = parseFloat(screenHeight, 10);
 
-  if (abs(screenPixelHeight - expectedPixelHeight) > 10) {
+  if (Math.abs(screenPixelHeight - expectedPixelHeight) > 10) {
     const newHeightPropery = `${window.innerHeight}px`;
     document.documentElement.style.addProperty(
       "--screen-height",
@@ -80,6 +80,7 @@ function mobileResize() {
 }
 
 function main() {
+  mobileResize();
   const coloredHellos = hellos.map(hello => {
     const newGrammar = hello.grammar;
     const newLang = hello.lang;
