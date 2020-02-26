@@ -76,8 +76,8 @@ h6 {
 }
 
 .splash-screen {
-  min-height: calc(100vh - 4.5rem);
-  min-height: calc(var(--initial-window-height) - 4.5rem);
+  height: calc(100vh - 4.5rem);
+  height: calc(var(--initial-window-height) - 4.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
