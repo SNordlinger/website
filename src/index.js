@@ -65,9 +65,7 @@ function mobileResize() {
   const expectedPixelHeight = window.innerHeight - fontPixelHeight * 4.5;
 
   const splashScreen = document.querySelector(".splash-screen");
-  const screenHeight = getComputedStyle(splashScreen, null).getPropertyValue(
-    "height"
-  );
+  const screenHeight = splashScreen.offsetHeight;
   const screenPixelHeight = parseFloat(screenHeight, 10);
 
   if (Math.abs(screenPixelHeight - expectedPixelHeight) > 10) {
