@@ -3,7 +3,6 @@ import "regenerator-runtime/runtime";
 import prism from "prismjs";
 import hellos from "./hellos";
 import ElementAnimation from "./ElementAnimation";
-import WeatherAnswer from "./WeatherAnswer";
 
 function runAnimations(animations) {
   animations.forEach(a => a.displayNextFrame());
@@ -56,11 +55,29 @@ function cycle(coloredHellos, currentIndex) {
   setTimeout(() => cycle(coloredHellos, newIndex), 10000);
 }
 
-function main() {
-  const weatherContainer = document.getElementById("weather-root");
-  const answer = new WeatherAnswer(weatherContainer);
-  answer.load();
+function mobileResize() {
+  const fontSize = getComputedStyle(
+    document.documentElement,
+    null
+  ).getPropertyValue("font-size");
+  const fontPixelHeight = parseFloat(fontSize, 10);
+  const expectedPixelHeight = window.innerHeight - fontPixelHeight * 4.5;
 
+  const splashScreen = document.querySelector(".splash-screen");
+  const screenHeight = splashScreen.offsetHeight;
+  const screenPixelHeight = parseFloat(screenHeight, 10);
+
+  if (Math.abs(screenPixelHeight - expectedPixelHeight) > 10) {
+    const newHeightPropery = `${window.innerHeight}px`;
+    document.documentElement.style.setProperty(
+      "--screen-height",
+      newHeightPropery
+    );
+  }
+}
+
+function main() {
+  mobileResize();
   const coloredHellos = hellos.map(hello => {
     const newGrammar = hello.grammar;
     const newLang = hello.lang;
