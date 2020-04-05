@@ -3,7 +3,6 @@ import "regenerator-runtime/runtime";
 import prism from "prismjs";
 import hellos from "./hellos";
 import ElementAnimation from "./ElementAnimation";
-import WeatherAnswer from "./WeatherAnswer";
 
 function runAnimations(animations) {
   animations.forEach(a => a.displayNextFrame());
@@ -57,10 +56,6 @@ function cycle(coloredHellos, currentIndex) {
 }
 
 function main() {
-  const weatherContainer = document.getElementById("weather-root");
-  const answer = new WeatherAnswer(weatherContainer);
-  answer.load();
-
   const coloredHellos = hellos.map(hello => {
     const newGrammar = hello.grammar;
     const newLang = hello.lang;
