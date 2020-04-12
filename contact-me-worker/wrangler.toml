@@ -1,0 +1,14 @@
+name = "contact-me-dev"
+type = "webpack"
+workers_dev = true
+[vars]
+  AIRTABLE_API_URL = "https://api.airtable.com/v0"
+  AIRTABLE_TABLE_NAME = "Responses"
+  CORS_ALLOW = "*"
+
+[env.production]
+name = "contact-me"
+  [env.production.vars]
+    AIRTABLE_API_URL = "https://api.airtable.com/v0"
+    AIRTABLE_TABLE_NAME = "Responses"
+    CORS_ALLOW = "https://uv.samnordlinger.com"
