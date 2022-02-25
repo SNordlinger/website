@@ -1,0 +1,26 @@
+{
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "javascript",
+            "c",
+            "rust",
+            "go",
+            "java",
+            "clojure",
+            "sql",
+            "bash",
+            "python",
+            "powershell"
+          ],
+          "plugins": [
+            "line-numbers"
+          ],
+          "theme": "tomorrow",
+          "css": true
+        }
+      ]
+    ]
+}
