@@ -2,7 +2,6 @@
   "name": "website",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -11,46 +10,16 @@
   "author": "Sam Nordlinger",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.2.1",
-    "prismjs": "^1.17.1",
-    "regenerator-runtime": "^0.13.3"
+    "core-js": "^3.21.1",
+    "parcel": "^2.3.2",
+    "prismjs": "^1.27.0",
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.5.5",
-    "babel-core": "^6.26.3",
-    "babel-plugin-prismjs": "^1.1.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.25.0"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      [
-        "prismjs",
-        {
-          "languages": [
-            "javascript",
-            "c",
-            "rust",
-            "go",
-            "java",
-            "clojure",
-            "sql",
-            "bash",
-            "python",
-            "powershell"
-          ],
-          "plugins": [
-            "line-numbers"
-          ],
-          "theme": "tomorrow",
-          "css": true
-        }
-      ]
-    ]
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@parcel/transformer-sass": "^2.3.2",
+    "babel-plugin-prismjs": "^2.1.0",
+    "sass": "^1.49.9"
   }
 }
